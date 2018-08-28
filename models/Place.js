@@ -6,7 +6,10 @@ const placeSchema = new Schema({
     // password: String,
     type: {
       type: String,
-      enum : ['Coffee', 'Books'],}
-})
+      enum : ['Coffee Place', 'Bookstore'],
+      location: { type: { type: String }, coordinates: [Number,Number] },}
+});
+placeSchema.index({ location: '2dsphere' });
 
-module.exports = mongoose.model('User', userSchema)
+
+module.exports = mongoose.model('Place', placeSchema)

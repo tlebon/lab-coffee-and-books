@@ -1,0 +1,25 @@
+<div class="container">
+
+  <div class="card">
+    <h1>Add your favorite coffee place or book store!</h1>
+
+    <form action="/add-location" method='POST'>
+      Name<input type="text" name='name' required='true'>
+      <br> Coffee Place or Bookstore?
+      <input type="text" name='type' required='true'>
+      <br>
+      <label>Address</label>
+      <input type="Number" name="latitude" placeholder="Latitude">
+      <input type="Number" name="longitude" placeholder="Longitude">
+
+      <br>
+      <button type='submit'>Create my location</button>
+      <br>
+      <br> {{#if error}}
+      <p>ERROR: {{error}}</p>
+      {{/if}}
+    </form>
+
+
+  </div>
+</div>
